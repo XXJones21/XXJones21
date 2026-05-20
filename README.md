@@ -23,15 +23,15 @@ A multi-year independent research platform. Privacy-first, cross-platform AI com
 
 **Everything together -- the Valinor stack running end-to-end:**
 
-<!-- VIDEO: paste user-attachments URL for everything.mov here -->
+https://github.com/user-attachments/assets/ee5ef531-ea6b-4be0-81ee-3e9f9e198447
 
 **Selene persona -- voice-cloned, animated companion rendered on the Quest 3 client:**
 
-<!-- VIDEO: paste user-attachments URL for Selene_animation_test(2).mp4 here -->
+https://github.com/user-attachments/assets/b43b3391-d795-4214-ade2-706f11c468a5
 
 **Environment generation -- MRUK scene understanding streamed to the server for contextual mesh generation inside the user's actual room:**
 
-<!-- VIDEO: paste user-attachments URL for walls-right-side-up.mov here -->
+https://github.com/user-attachments/assets/456fba7a-e323-4dd1-a767-29c38c0940e7
 
 Stack: Python, Kotlin, Swift, Rust, TypeScript - llama.cpp + Qwen 3 MoE GGUF - NeuTTS Air - Whisper - SDXL-Turbo - Meta Spatial SDK + MRUK - MLX-Swift - MWDAT.
 
@@ -39,7 +39,7 @@ Stack: Python, Kotlin, Swift, Rust, TypeScript - llama.cpp + Qwen 3 MoE GGUF - N
 
 Ported the open-source Moonlight game-streaming client to Meta Quest 3 using Meta Spatial SDK. Built as the first proof-of-concept after Valinor validated the Spatial SDK pipeline; still in personal daily use. Low-latency streaming with hardware video acceleration, in-VR pairing, passthrough MR mode, dynamic panel scaling, Bluetooth gamepad passthrough, and automatic stream recovery after sleep/wake cycles.
 
-<!-- VIDEO: paste user-attachments URL for SilentHill2Test-spatialSDK-2(2).mp4 here -->
+https://github.com/user-attachments/assets/4d45a8ba-84ff-4283-b45e-64a5e100f86f
 
 Source: [github.com/XXJones21/Moonlight-SpatialSDK](https://github.com/XXJones21/Moonlight-SpatialSDK) -- v1.0.0 December 2025.
 
