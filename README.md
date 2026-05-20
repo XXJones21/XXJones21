@@ -3,7 +3,7 @@
 
 AI engineer working on the reasoning layer that makes LLMs reliable on long-horizon work. Currently at Meta as an Information Solutions Engineer. Background spans full-stack Rust and Python, the behavioral science of LLM reasoning, and a decade of decomposing complex systems into precise, actionable instructions -- the foundational craft of context engineering for agents.
 
-Santa Clara, CA - [joshjones.tech](https://joshjones.tech) - [@MrSwazzy21](https://twitter.com/MrSwazzy21)
+Santa Clara, CA - [LinkedIn](https://www.linkedin.com/in/joshua-jones-57115382/) - [@MrSwazzy21](https://twitter.com/MrSwazzy21)
 
 ---
 
