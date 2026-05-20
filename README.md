@@ -1,28 +1,3 @@
-<!--
-  XXJones21 GitHub profile README — draft.
-
-  Repo target: github.com/XXJones21/XXJones21 (special "profile repo" — name must match username)
-
-  Video upload workflow before commit:
-    1. Open a throwaway issue in any of your repos (e.g. XXJones21/Moonlight-SpatialSDK).
-    2. Drag-and-drop each of these files into the comment box one at a time:
-         C:\Users\josh2\Downloads\everything.mov                          (7.25 MB)
-         C:\Users\josh2\Downloads\Selene_animation_test(2).mp4            (5.78 MB)
-         C:\Users\josh2\Downloads\walls-right-side-up.mov                 (5.14 MB)
-         C:\Users\josh2\Downloads\SilentHill2Test-spatialSDK-2(2).mp4    (19.85 MB)
-    3. Wait for each to finish uploading — GitHub will replace the placeholder text
-       with a markdown image/video tag containing a https://github.com/user-attachments/assets/<uuid> URL.
-    4. Copy the four user-attachments URLs.
-    5. Replace the four <!-- VIDEO: ... --> placeholders below with:
-         <video src="<paste URL here>" controls></video>
-    6. Discard the throwaway issue (do NOT submit). The uploaded asset URLs persist.
-    7. Delete this entire comment block before committing.
-
-  GitHub video embedding rules (current as of 2026-05):
-    - Only https://github.com/user-attachments/assets/<uuid> URLs render as inline video.
-    - Repo-relative paths and raw.githubusercontent.com URLs do NOT render.
-    - Free-tier issue-comment upload limit is 25 MB per file. All four videos are under that.
--->
 
 # Joshua Jones
 
