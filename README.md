@@ -17,7 +17,7 @@ The audience shifted. It is no longer whether humans can understand our context;
 
 ## Featured projects
 
-### Valinor: local-first mixed-reality AI companion platform
+### Valinor: local-first mixed-reality AI companion platform (private)
 
 A multi-year independent research platform. Privacy-first, cross-platform AI companion with three fully-featured clients (iOS / visionOS, Meta Quest 3, and Desktop) sharing a single persona-driven conversation engine over WebSocket. All inference (LLM, STT, TTS, image generation) runs locally on a Windows host. Zero telemetry, zero cloud dependency. The architecture predates and shares direct lineage with the reasoning frameworks deployed in my current Meta role.
 
@@ -35,7 +35,7 @@ https://github.com/user-attachments/assets/456fba7a-e323-4dd1-a767-29c38c0940e7
 
 Stack: Python, Kotlin, Swift, Rust, TypeScript. llama.cpp + Qwen 3 MoE GGUF, NeuTTS Air, Whisper, SDXL-Turbo, Meta Spatial SDK + MRUK, MLX-Swift, MWDAT.
 
-### Moonlight-SpatialSDK: Quest 3 port of the Moonlight game-streaming client
+### Moonlight-SpatialSDK: Quest 3 port of the Moonlight game-streaming client (public)
 
 Ported the open-source Moonlight game-streaming client to Meta Quest 3 using Meta Spatial SDK. Built as the first proof-of-concept after Valinor validated the Spatial SDK pipeline. Still in personal daily use. Low-latency streaming with hardware video acceleration, in-VR pairing, passthrough MR mode, dynamic panel scaling, Bluetooth gamepad passthrough, and automatic stream recovery after sleep/wake cycles.
 
@@ -45,7 +45,7 @@ Source: [github.com/XXJones21/Moonlight-SpatialSDK](https://github.com/XXJones21
 
 Stack: C (Moonlight protocol layer), Kotlin + Jetpack Compose (Quest UI), Java, GLSL. Meta Spatial SDK, Android MediaCodec.
 
-### Dreams.ai: interactive AI storytelling platform
+### Dreams.ai: interactive AI storytelling platform (private)
 
 Full-stack creative platform combining LLM narrative generation, image diffusion, and video synthesis into a social discovery experience. Custom `.imn` dream file format with feed, infinite-scroll discovery, trending tags, collections, and per-user profiles. Bridges the Technical Artist craft of creative content pipelines into modern generative-model engineering.
 
@@ -93,4 +93,4 @@ Decomposing complex systems into actionable instructions is a single craft. It d
 
 - LinkedIn: [linkedin.com/in/joshua-jones-57115382](https://www.linkedin.com/in/joshua-jones-57115382/)
 - Twitter / X: [@MrSwazzy21](https://twitter.com/MrSwazzy21)
-- Email: joshuatjones92 at gmail dot com
+- Email: joshuatjones92@gmail.com
