@@ -51,6 +51,12 @@ Full-stack creative platform combining LLM narrative generation, image diffusion
 
 Stack: TypeScript, Python - React + Vite - Tailwind - Supabase - LangGraph - llama.cpp - Diffusers - Wan2.2.
 
+### autowrite -- Claude Code plugin for autonomous resume optimization
+
+Built one night over the weekend to help impacted coworkers after the 2026-05-20 Meta layoff. Spawns company-specific recruiter subagents in parallel, researches each target's hiring profile from public sources, scores the resume against 6-12 binary evals per company, and mutates one line at a time until each variant locks at the convergence threshold. Adapts Karpathy's autoresearch loop from skill-prompt optimization to resume content. Same domain-agnostic loop that drives Valinor's agent harness and my Meta work, retargeted at hiring evaluation.
+
+Stack: Markdown-only plugin -- Claude Code skills + subagents -- WebSearch / WebFetch for company research -- live HTML dashboard.
+
 ---
 
 ## Currently working on
