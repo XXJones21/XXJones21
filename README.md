@@ -51,6 +51,14 @@ Full-stack creative platform combining LLM narrative generation, image diffusion
 
 Stack: TypeScript, Python. React + Vite, Tailwind, Supabase, LangGraph, llama.cpp, Diffusers, Wan2.2.
 
+### ComfyUI-Local-MCP: local-first ComfyUI client and MCP server (public)
+
+A device-aware Python library and MCP server that lets developers build local image and video generation pipelines on top of ComfyUI. Ships as both an embeddable client and a Claude Code plugin (a `comfy-local` subagent and setup skill, auto-wiring through `.mcp.json` stdio transport). Recommends workflows based on available GPU memory and installed models. Built to power Dreams.ai's generative pipeline; usable standalone for any local-first generative AI integration.
+
+Source: [github.com/XXJones21/ComfyUI-Local-MCP](https://github.com/XXJones21/ComfyUI-Local-MCP). MIT licensed.
+
+Stack: Python, FastMCP, ComfyUI runtime. Ships as MCP server (primary interface) and agentskills.io-format Claude Code plugin.
+
 ### autowrite: Claude Code plugin for autonomous resume optimization
 
 Built one night over the weekend to help impacted coworkers after the 2026-05-20 Meta layoff. Spawns company-specific recruiter subagents in parallel, researches each target's hiring profile from public sources, scores the resume against 6-12 binary evals per company, and mutates one line at a time until each variant locks at the convergence threshold. Adapts Karpathy's autoresearch loop from skill-prompt optimization to resume content. Same domain-agnostic loop that drives Valinor's agent harness and my Meta work, retargeted at hiring evaluation.
