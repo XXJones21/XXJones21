@@ -19,7 +19,7 @@ The audience shifted. It is no longer whether humans can understand our context;
 
 ### Valinor: local-first mixed-reality AI companion platform (private)
 
-A multi-year independent research platform. Privacy-first, cross-platform AI companion with three fully-featured clients (iOS / visionOS, Meta Quest 3, and Desktop) sharing a single persona-driven conversation engine over WebSocket. All inference (LLM, STT, TTS, image generation) runs locally on a Windows host. Zero telemetry, zero cloud dependency. The architecture predates and shares direct lineage with the reasoning frameworks deployed in my current Meta role.
+A multi-year independent research platform. Privacy-first, cross-platform AI companion spanning five surfaces — iPhone, Apple Vision Pro, Meta Quest 3, desktop, and a retail Echo Show reflashed with LineageOS — that all speak one universal voice protocol to **Valar**, the local gateway and agent harness routing persona, inference, and generative-UI rendering behind a single entry point. All inference (LLM, STT, TTS, image generation) runs locally on a Windows host. Zero telemetry, zero cloud dependency. The architecture predates and shares direct lineage with the reasoning frameworks deployed in my current Meta role.
 
 **Everything together. The Valinor stack running end-to-end:**
 
@@ -32,6 +32,14 @@ https://github.com/user-attachments/assets/b43b3391-d795-4214-ade2-706f11c468a5
 **Environment generation. MRUK scene understanding streamed to the server for contextual mesh generation inside the user's actual room:**
 
 https://github.com/user-attachments/assets/456fba7a-e323-4dd1-a767-29c38c0940e7
+
+**Vision Pro client. Voice-driven Sulivan persona and a live generative-UI weather card, world-locked in passthrough mixed reality and rendered inside the user's actual room — listening, to thinking, to a spoken answer as a card:**
+
+https://github.com/user-attachments/assets/07f29f12-8ddd-4836-8a44-d916f47c2323
+
+**Ambient panel. The same persona and Valar protocol running always-on on a retail Echo Show 8 reflashed to LineageOS — a thin WebSocket voice client with server-side STT:**
+
+https://github.com/user-attachments/assets/1cc8d831-87d1-4727-bfa5-14871ad24559
 
 Stack: Python, Kotlin, Swift, Rust, TypeScript. llama.cpp + Qwen 3 MoE GGUF, NeuTTS Air, Whisper, SDXL-Turbo, Meta Spatial SDK + MRUK, MLX-Swift, MWDAT.
 
@@ -59,9 +67,11 @@ Source: [github.com/XXJones21/ComfyUI-Local-MCP](https://github.com/XXJones21/Co
 
 Stack: Python, FastMCP, ComfyUI runtime. Ships as MCP server (primary interface) and agentskills.io-format Claude Code plugin.
 
-### autowrite: Claude Code plugin for autonomous resume optimization
+### autowrite: Claude Code plugin for autonomous resume optimization (public)
 
 Built one night over the weekend to help impacted coworkers after the 2026-05-20 Meta layoff. Spawns company-specific recruiter subagents in parallel, researches each target's hiring profile from public sources, scores the resume against 6-12 binary evals per company, and mutates one line at a time until each variant locks at the convergence threshold. Adapts Karpathy's autoresearch loop from skill-prompt optimization to resume content. Same domain-agnostic loop that drives Valinor's agent harness and my Meta work, retargeted at hiring evaluation.
+
+Source: [github.com/XXJones21/autowrite](https://github.com/XXJones21/autowrite). MIT licensed.
 
 Stack: Markdown-only plugin authored in the agentskills.io format. Claude Code skills and subagents, WebSearch and WebFetch for company research, live HTML dashboard.
 
