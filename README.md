@@ -1,27 +1,41 @@
-
 # Joshua Jones
 
-AI engineer working on the reasoning layer that makes LLMs reliable on long-horizon work. Currently at Meta as an Information Solutions Engineer. Background spans full-stack Rust and Python, the behavioral science of LLM reasoning, and a decade of decomposing complex systems into precise, actionable instructions. That decomposition is the foundational craft of context engineering for agents.
+I build agent infrastructure and the clients that ship on top of it. Ten years of developer-facing work before that: documentation, SDKs, and sample code at Apple, Snap, Mojang, and Magic Leap.
 
-Santa Clara, CA, [LinkedIn](https://www.linkedin.com/in/joshua-jones-57115382/), [@MrSwazzy21](https://twitter.com/MrSwazzy21)
+Santa Clara, CA. [LinkedIn](https://www.linkedin.com/in/joshua-jones-57115382/), [@MrSwazzy21](https://twitter.com/MrSwazzy21)
 
 ---
 
 ## What I'm building
 
-The thread connecting the projects below: reasoning quality, expressed through a domain-agnostic loop, outperforms tool sprawl. I design multi-agent frameworks that impose structured cognition on LLMs rather than wrapping them in dozens of specialized skills. The same loop drives documentation generation, code scaffolding, MR persona orchestration, and (soon) financial decision-making.
+The thread connecting the projects below: reasoning quality, expressed through a domain-agnostic loop, outperforms tool sprawl. I design multi-agent frameworks that impose structured cognition on LLMs rather than wrapping them in dozens of specialized skills. The same loop drives documentation generation, code scaffolding, and persona orchestration.
 
-The audience shifted. It is no longer whether humans can understand our context; it is whether agents and LLMs can read and reason over it.
+The audience shifted. The question is no longer whether humans can read our context. It is whether agents can read and reason over it too, and those two readers do not want the same thing.
 
 ---
 
-## Featured projects
+## Hearth
 
-### Valinor: local-first mixed-reality AI companion platform (private)
+**Current focus.** A companion that runs entirely on your own machine. Conversations, memory, and your persona's voice stay on your hardware, because there is nowhere else for them to go.
 
-A multi-year independent research platform. Privacy-first, cross-platform AI companion spanning five surfaces — iPhone, Apple Vision Pro, Meta Quest 3, desktop, and a retail Echo Show reflashed with LineageOS — that all speak one universal voice protocol to **Valar**, the local gateway and agent harness routing persona, inference, and generative-UI rendering behind a single entry point. All inference (LLM, STT, TTS, image generation) runs locally on a Windows host. Zero telemetry, zero cloud dependency. The architecture predates and shares direct lineage with the reasoning frameworks deployed in my current Meta role.
+Five clients on one backend. All inference (LLM, speech-to-text, text-to-speech, image generation) runs locally, with zero telemetry. The desktop client bundles the backend and supervises it as a tree of native processes, so installing Hearth installs the whole runtime. No WSL, no container.
 
-**Everything together. The Valinor stack running end-to-end:**
+A Rust crate, `hearth-probe`, inspects the machine first and decides what Hearth it can run. It ships as its own crate so the app, a command line, and a scripted installer all reach the same conclusions.
+
+```
+cargo run -p hearth-probe -- explain
+cargo run -p hearth-probe -- explain --simulate m1-air-8gb
+```
+
+Source: [github.com/XXJones21/Hearth](https://github.com/XXJones21/Hearth). Pre-alpha, v0.1.0.
+
+Stack: Rust, TypeScript, Kotlin, Swift, Python. Tauri v2 + React (desktop), Jetpack Compose (Android), SwiftUI (iOS and visionOS), llama.cpp + GGUF, Whisper, NeuTTS Air, Diffusers.
+
+### Valinor, the testbed behind it
+
+Hearth's repository starts in August 2026 with a working client and no commits behind it. The work is older. It grew inside a personal research platform called Valinor, which is still where surfaces get tried before they ship, and which carries things that will never ship in Hearth.
+
+**Everything together. The stack running end-to-end:**
 
 https://github.com/user-attachments/assets/ee5ef531-ea6b-4be0-81ee-3e9f9e198447
 
@@ -33,69 +47,81 @@ https://github.com/user-attachments/assets/b43b3391-d795-4214-ade2-706f11c468a5
 
 https://github.com/user-attachments/assets/456fba7a-e323-4dd1-a767-29c38c0940e7
 
-**Vision Pro client. Voice-driven Sulivan persona and a live generative-UI weather card, world-locked in passthrough mixed reality and rendered inside the user's actual room — listening, to thinking, to a spoken answer as a card:**
+**Vision Pro client. A voice-driven persona and a live generative-UI weather card, world-locked in passthrough mixed reality: listening, to thinking, to a spoken answer as a card:**
 
 https://github.com/user-attachments/assets/07f29f12-8ddd-4836-8a44-d916f47c2323
 
-**Ambient panel. The same persona and Valar protocol running always-on on a retail Echo Show 8 reflashed to LineageOS — a thin WebSocket voice client with server-side STT:**
+**Ambient panel. The same persona and protocol running always-on on a retail Echo Show 8 reflashed to LineageOS, a thin WebSocket voice client with server-side speech recognition:**
 
 https://github.com/user-attachments/assets/1cc8d831-87d1-4727-bfa5-14871ad24559
 
-Stack: Python, Kotlin, Swift, Rust, TypeScript. llama.cpp + Qwen 3 MoE GGUF, NeuTTS Air, Whisper, SDXL-Turbo, Meta Spatial SDK + MRUK, MLX-Swift, MWDAT.
+---
 
-### Moonlight-SpatialSDK: Quest 3 port of the Moonlight game-streaming client (public)
+## Other projects
 
-Ported the open-source Moonlight game-streaming client to Meta Quest 3 using Meta Spatial SDK. Built as the first proof-of-concept after Valinor validated the Spatial SDK pipeline. Still in personal daily use. Low-latency streaming with hardware video acceleration, in-VR pairing, passthrough MR mode, dynamic panel scaling, Bluetooth gamepad passthrough, and automatic stream recovery after sleep/wake cycles.
+### Moonlight-SpatialSDK: Quest 3 port of the Moonlight game-streaming client
+
+Rebuilt the GameStream protocol layer's pairing and session handling in C for the Quest 3 variant of Android: certificate-based PIN pairing, Wi-Fi LAN host discovery, and stream recovery across sleep and wake. Underneath it, Bluetooth gamepad passthrough and MediaCodec hardware decode driving a Compose UI. Built as the first proof of concept after Valinor validated the Spatial SDK pipeline. Still in daily use.
 
 https://github.com/user-attachments/assets/4d45a8ba-84ff-4283-b45e-64a5e100f86f
 
-Source: [github.com/XXJones21/Moonlight-SpatialSDK](https://github.com/XXJones21/Moonlight-SpatialSDK). v1.0.0 December 2025.
+Source: [github.com/XXJones21/Moonlight-SpatialSDK](https://github.com/XXJones21/Moonlight-SpatialSDK). v1.0.0, December 2025.
 
-Stack: C (Moonlight protocol layer), Kotlin + Jetpack Compose (Quest UI), Java, GLSL. Meta Spatial SDK, Android MediaCodec.
+Stack: C, Kotlin + Jetpack Compose, Java, GLSL. Meta Spatial SDK, Android MediaCodec.
 
-### Dreams.ai: interactive AI storytelling platform (private)
+### Dreams.ai: interactive AI storytelling platform
 
-Full-stack creative platform combining LLM narrative generation, image diffusion, and video synthesis into a social discovery experience. Custom `.imn` dream file format with feed, infinite-scroll discovery, trending tags, collections, and per-user profiles. Bridges the Technical Artist craft of creative content pipelines into modern generative-model engineering.
+Full-stack platform combining LLM narrative generation, image diffusion, and video synthesis into a social discovery experience. Four specialized agents run in parallel per generation. Custom `.imn` dream format, with an infinite-scroll feed, weekly trending, collections, and per-user profiles.
+
+Source: [github.com/XXJones21/Dreams.ai](https://github.com/XXJones21/Dreams.ai). Deployed on Netlify.
 
 Stack: TypeScript, Python. React + Vite, Tailwind, Supabase, LangGraph, llama.cpp, Diffusers, Wan2.2.
 
-### ComfyUI-Local-MCP: local-first ComfyUI client and MCP server (public)
+### ComfyUI-Local-MCP: local-first ComfyUI client and MCP server
 
-A device-aware Python library and MCP server that lets developers build local image and video generation pipelines on top of ComfyUI. Ships as both an embeddable client and a Claude Code plugin (a `comfy-local` subagent and setup skill, auto-wiring through `.mcp.json` stdio transport). Recommends workflows based on available GPU memory and installed models. Built to power Dreams.ai's generative pipeline; usable standalone for any local-first generative AI integration.
+A device-aware Python library and MCP server that lets Claude Code, Codex, and Hearth generate images and video on a local ComfyUI instance. Reads the host GPU and recommends a workflow its VRAM can actually run. Ships as both an embeddable client and a Claude Code plugin, auto-wiring through `.mcp.json` stdio transport.
 
 Source: [github.com/XXJones21/ComfyUI-Local-MCP](https://github.com/XXJones21/ComfyUI-Local-MCP). MIT licensed.
 
-Stack: Python, FastMCP, ComfyUI runtime. Ships as MCP server (primary interface) and agentskills.io-format Claude Code plugin.
+Stack: Python, FastMCP, ComfyUI runtime. Ships as an MCP server and an agentskills.io-format plugin.
 
-### autowrite: Claude Code plugin for autonomous resume optimization (public)
+### autowrite: Claude Code plugin for autonomous resume optimization
 
-Built one night over the weekend to help impacted coworkers after the 2026-05-20 Meta layoff. Spawns company-specific recruiter subagents in parallel, researches each target's hiring profile from public sources, scores the resume against 6-12 binary evals per company, and mutates one line at a time until each variant locks at the convergence threshold. Adapts Karpathy's autoresearch loop from skill-prompt optimization to resume content. Same domain-agnostic loop that drives Valinor's agent harness and my Meta work, retargeted at hiring evaluation.
+Built one night over a weekend to help coworkers impacted by the May 2026 Meta layoff. Spawns company-specific recruiter subagents in parallel, researches each target's hiring profile from public sources, scores a resume against 6 to 12 binary evals per company, and mutates one line at a time until each variant locks at the convergence threshold. Adapts Karpathy's autoresearch loop from skill-prompt optimization to resume content.
 
 Source: [github.com/XXJones21/autowrite](https://github.com/XXJones21/autowrite). MIT licensed.
 
-Stack: Markdown-only plugin authored in the agentskills.io format. Claude Code skills and subagents, WebSearch and WebFetch for company research, live HTML dashboard.
+### Feanor: desktop client for local models, with a runtime tool system
+
+Built for the problem MCP was written to solve. Tools are declared in JSON and resolved at runtime, so a new capability needs no client rebuild and no model reload. Direct ancestor of Hearth's gateway and tool registry.
+
+Source: [github.com/XXJones21/Feanor](https://github.com/XXJones21/Feanor). January 2025.
+
+Stack: React + TypeScript over a FastAPI proxy, packaged with Electron and PyQt6.
+
+### Also public
+
+[TheArchive](https://github.com/XXJones21/TheArchive), a visionOS custom immersive environment generator. [Vibes](https://github.com/XXJones21/Vibes), a visionOS music visualization built on RealityKit.
 
 ---
 
-## Currently working on
+## Published work
 
-CHOAM: a simulated hedge fund and multi-agent reasoning platform that operationalizes the same domain-agnostic loop driving my Meta work and Valinor. Currently using F1 Manager 2024 telemetry as a fast-feedback debugging environment for the reasoning loop before moving the same architecture to market decisions. The bet: reasoning quality, distilled into a small fine-tuned model, outperforms tool sprawl in the seconds-to-minutes decision band where most profitable trading actually lives.
-
-The thesis and roadmap is the document I would hand to anyone who wanted to understand where the work is going.
+I wrote the [Contributor Style Guide](https://learn.microsoft.com/en-us/minecraft/creator/documents/styleguide) for the Minecraft Creator Portal, which still governs tone, inclusivity, and naming conventions for every community contribution to the Bedrock docs. I also wrote and built every sample in the introductory visionOS series on developer.apple.com, writing the Swift and the documentation for each.
 
 ---
 
 ## Technical focus
 
-**Agent orchestration and LLM engineering.** Multi-agent reasoning frameworks, agent harnesses (Claude Code, OpenCode, Codex), RAG and knowledge-graph construction, LLM evaluation methodology, prompt and context engineering, LoRA / RLHF concepts, lost-in-the-middle and attention-budget analysis.
+**Agent orchestration and LLM engineering.** Multi-agent orchestration and state-machine design, agent harnesses at configuration level (Claude Code, OpenCode, Codex): skills, hooks, plugin packaging, context management. MCP server authoring, evaluation-harness design, RAG and knowledge-graph construction, prompt and context engineering, lost-in-the-middle and attention-budget analysis.
 
-**AI/ML infrastructure.** llama.cpp / GGUF, MLX-Swift, Whisper, NeuTTS, Diffusers / SDXL-Turbo, Wan2.2, Ollama, LangChain / LangGraph, local-first GPU inference, fine-tuning workflows.
+**AI/ML infrastructure.** llama.cpp / GGUF, MLX-Swift, Whisper, NeuTTS, Diffusers / SDXL-Turbo, Wan2.2, Ollama, LangGraph, local-first GPU inference, fine-tuning workflows.
 
-**Languages.** Python, Rust, TypeScript, Kotlin, Swift, C++, C#, JavaScript, GLSL.
+**Languages.** TypeScript, Python, Rust, C, Kotlin, Swift, JavaScript, SQL, C++, C#, GLSL.
 
-**Spatial computing and XR.** Meta Spatial SDK, MRUK, RealityKit, Reality Composer Pro, visionOS, Unreal Engine 4 and 5, Unity, MWDAT (Meta Ray-Ban).
+**Web, desktop, and cloud.** React, Vite, Tailwind, Supabase, Three.js / React Three Fiber. Tauri v2 and Electron packaging, FastAPI, Google Cloud Platform with CI/CD, Docker and Podman on WSL2.
 
-**Web and full-stack.** React, Vite, Tailwind, Supabase, Three.js / React Three Fiber, Docusaurus, SQL-backed job queues.
+**Developer enablement and XR.** Docs-as-code, Docusaurus, sample-code authoring, developer support and escalation, technical workshops and livestreams. Meta Spatial SDK, MRUK, RealityKit, visionOS, Unreal Engine, Unity, Lens Studio.
 
 ---
 
@@ -103,7 +129,7 @@ The thesis and roadmap is the document I would hand to anyone who wanted to unde
 
 Reasoning over tool sprawl. Architecture transfers across domains; policy does not. The loop is the asset.
 
-Decomposing complex systems into actionable instructions is a single craft. It does not matter whether the audience is a junior engineer reading documentation, a partner team adopting a new framework, or an LLM agent executing a multi-step plan. The discipline holds; the audience moved.
+Decomposing complex systems into actionable instructions is a single craft. It does not matter whether the audience is a junior engineer reading documentation, a partner team adopting a new framework, or an LLM agent executing a multi-step plan. The discipline holds. The audience moved.
 
 ---
 
