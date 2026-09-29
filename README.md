@@ -2,7 +2,7 @@
 
 I build agent infrastructure and the clients that ship on top of it. Ten years of developer-facing work before that: documentation, SDKs, and sample code at Apple, Snap, Mojang, and Magic Leap.
 
-Santa Clara, CA. [LinkedIn](https://www.linkedin.com/in/joshua-jones-57115382/), [@MrSwazzy21](https://twitter.com/MrSwazzy21)
+Santa Clara, CA. [LinkedIn](https://www.linkedin.com/in/joshua-jones-57115382/), [@Mr_Swazzy21](https://twitter.com/Mr_Swazzy21)
 
 ---
 
