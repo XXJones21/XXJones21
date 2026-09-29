@@ -20,7 +20,12 @@ The audience shifted. The question is no longer whether humans can read our cont
 
 Five clients on one backend. All inference (LLM, speech-to-text, text-to-speech, image generation) runs locally, with zero telemetry. The desktop client bundles the backend and supervises it as a tree of native processes, so installing Hearth installs the whole runtime. No WSL, no container.
 
-<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">Now in Immersive Space! <br><br>- Tap and hold to switch back and forth between volumetric window to immersive space <br>- Second brain as a bookshelf to quickly start sessions and context<br>- Content anchored to persist between sessions<br>- SurroundingLights and Projection <a href="https://t.co/pkuC2rU8P1">pic.twitter.com/pkuC2rU8P1</a></p>&mdash; Joshua Jones ᯅ (@Mr_Swazzy21) <a href="https://x.com/Mr_Swazzy21/status/2090212800677470622?ref_src=twsrc%5Etfw">August 19, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script> 
+**Hearth on Vision Pro, now in Immersive Space. Tap and hold to move between a volumetric window and the immersive
+  space. Your second brain appears as a bookshelf for starting sessions and pulling in context. Anchored content
+  persists between sessions. Includes SurroundingLights and Projection. ([original
+  post](https://x.com/Mr_Swazzy21/status/2090212800677470622))**
+
+https://github.com/user-attachments/assets/950d5133-122b-4a86-a4fb-af5a90bcc4ed
 
 Source: [github.com/XXJones21/Hearth](https://github.com/XXJones21/Hearth). Pre-alpha, v0.1.0.
 
