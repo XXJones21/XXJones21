@@ -20,12 +20,7 @@ The audience shifted. The question is no longer whether humans can read our cont
 
 Five clients on one backend. All inference (LLM, speech-to-text, text-to-speech, image generation) runs locally, with zero telemetry. The desktop client bundles the backend and supervises it as a tree of native processes, so installing Hearth installs the whole runtime. No WSL, no container.
 
-A Rust crate, `hearth-probe`, inspects the machine first and decides what Hearth it can run. It ships as its own crate so the app, a command line, and a scripted installer all reach the same conclusions.
-
-```
-cargo run -p hearth-probe -- explain
-cargo run -p hearth-probe -- explain --simulate m1-air-8gb
-```
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">Now in Immersive Space! <br><br>- Tap and hold to switch back and forth between volumetric window to immersive space <br>- Second brain as a bookshelf to quickly start sessions and context<br>- Content anchored to persist between sessions<br>- SurroundingLights and Projection <a href="https://t.co/pkuC2rU8P1">pic.twitter.com/pkuC2rU8P1</a></p>&mdash; Joshua Jones ᯅ (@Mr_Swazzy21) <a href="https://x.com/Mr_Swazzy21/status/2090212800677470622?ref_src=twsrc%5Etfw">August 19, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script> 
 
 Source: [github.com/XXJones21/Hearth](https://github.com/XXJones21/Hearth). Pre-alpha, v0.1.0.
 
