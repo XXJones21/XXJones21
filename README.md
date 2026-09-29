@@ -29,7 +29,7 @@ cargo run -p hearth-probe -- explain --simulate m1-air-8gb
 
 Source: [github.com/XXJones21/Hearth](https://github.com/XXJones21/Hearth). Pre-alpha, v0.1.0.
 
-Stack: Rust, TypeScript, Kotlin, Swift, Python. Tauri v2 + React (desktop), Jetpack Compose (Android), SwiftUI (iOS and visionOS), llama.cpp + GGUF, Whisper, NeuTTS Air, Diffusers.
+Stack: Rust, TypeScript, Kotlin, Swift, Python. Tauri v2 + React (desktop), Jetpack Compose (Android), SwiftUI (iOS and visionOS), llama.cpp + GGUF, Whisper, Omnivoice, Diffusers.
 
 ### Valinor, the testbed behind it
 
